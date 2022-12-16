@@ -1,13 +1,11 @@
-import { Container } from "react-bootstrap";
-import { useSelector } from 'react-redux';
+import AllTables from "../../features/AllTables/AllTables";
 
 const Home = () => {
 
-    const tables = useSelector(state => state.tables);
     return (
-        <Container>
-            Strona główna
-        </Container>
+        <div>
+            <AllTables />
+        </div>
     );
 };
 
