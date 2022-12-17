@@ -1,0 +1,48 @@
+@use "sass:math";
+@import '../../../styles/settings.scss';
+
+
+.heading {
+  text-align: left;
+  padding: 20px 0 20px;
+  font-weight: bold;
+}
+
+.tables {
+  margin-top: $base-size * 2;
+}
+
+.heading {
+  text-align: center;
+}
+
+.tableLink {
+  display: flex;
+  align-content: space-around;
+  justify-content: space-between;
+  align-items: baseline;
+  text-decoration: none;
+  color: $color-dark;
+  background: $color-light;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+td:first-child {
+  width: 150px;
+}
+
+td {
+  vertical-align: middle;
+}
+
+td:last-child {
+  text-align: right;
+}
+
+tr {
+  border-bottom-width: 1px
+}

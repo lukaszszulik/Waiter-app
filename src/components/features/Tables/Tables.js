@@ -1,31 +1,45 @@
-import { useSelector } from "react-redux";
-import { getAllTables } from "../../../redux/tablesRedux";
-import { ListGroup, Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import styles from './Tables.module.scss';
+import { useSelector } from 'react-redux';
+import { getAllTables } from '../../../redux/TableRedux';
+import Button from '../../common/Button/Button';
+import { Table, Spinner } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
-const AllTables = () => {
-    const tables = useSelector(state => getAllTables(state));
-    if(tables.lenght === 0 )
-    return(
-        <div>
-            <Spinner  animation="border" variant="primary" />
-            <p>Loading</p>
-        </div>
-    )
+const Tables = (props) => {
+  const tables = useSelector(getAllTables);
+  if (tables.length === 0)
     return (
-        <div>
-            <h1>All Tables</h1>
-            <ListGroup variant="flush">
-                {tables.map((table) => <ListGroup.Item key={table.id} id={table.id} status={table.status} to={'/table/' + table.id}>
-                <div>
-                    <h3>Table {table.id}</h3>
-                    <h6>Status {table.status}</h6>
-                </div>
-                <Link to={{ pathname: `/table/${table.id}`}}>Show more</Link>
-                </ListGroup.Item>)}
-            </ListGroup>
-        </div>
+      <div>
+        <Spinner animation='border' variant='primary' />
+        <p>Loading</p>
+      </div>
     );
+  return (
+    <div>
+      <h2 className={styles.heading}>All Tables</h2>
+      <Table hover>
+        <tbody>
+          {tables.map((table) => (
+            <tr key={table.id}>
+              <td>
+                <h3>
+                  <b>Table</b> {table.id}
+                </h3>
+              </td>
+              <td>
+                <b>Status:</b> {table.status}
+              </td>
+              <td>
+                <NavLink to={'/table/' + table.id}>
+                  <Button classname={styles.button}>Show more</Button>
+                </NavLink>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </div>
+  );
 };
 
-export default AllTables;
+export default Tables;

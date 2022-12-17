@@ -1,22 +1,23 @@
-import { Route, Routes } from "react-router-dom";
-import { Container } from "react-bootstrap";
-import Home from './components/pages/Home/Home';
-import Table from './components/pages/Table/Table';
-import Error from "./components/pages/Error/Error";
+import { Container } from 'react-bootstrap';
+import Tables from './components/features/Tables/Tables';
+import Table from './components/features/Table/Table';
 import Footer from './components/views/Footer/Footer';
-import Header from './components/views/Header/Header';
+import { Routes, Route } from 'react-router-dom';
+import Header from './components/pages/Header/Header';
 
 const App = () => {
   return (
     <Container>
-      <Header/>
-      <Routes>
-        <Route path ="/" element={<Home/>} />
-        <Route path ="/table" element={<Table/>} />
-        <Route path ="*" element={<Error/>} />
-      </Routes>
-      <Footer/>
-    </Container>
+    <Header />
+    <Routes>
+      <Route path='/' element={<Tables />} />
+      <Route path='/table' element={<Table />} />
+      <Route path='/table/:tableId' element={<Table />} />
+      <Route path='/' element={<Tables />} />
+      <Route path='/*' element={<Tables />} />
+    </Routes>
+    <Footer/>
+  </Container>
   );
 };
 
