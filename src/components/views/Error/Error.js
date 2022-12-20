@@ -1,9 +1,12 @@
+import PageTitle from '../PageTitle/PageTitle';
+
 const Error = () => {
-    return (
-        <h2>
-            404 NOT FOUND
-        </h2>
-    );
+  return (
+    <div>
+      <PageTitle>404 NOT FOUND!</PageTitle>
+      <p>lorem ipsum</p>
+    </div>
+  );
 };
 
 export default Error;

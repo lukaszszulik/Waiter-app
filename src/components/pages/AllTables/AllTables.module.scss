@@ -1,0 +1,26 @@
+@use "sass:math";
+@import '../../../styles/settings.scss';
+
+
+
+.tables {
+  margin-top: $base-size * 2;
+}
+
+.heading {
+  text-align: center;
+}
+
+.tableLink {
+  display: flex;
+  align-content: space-around;
+  justify-content: space-between;
+  text-decoration: none;
+  color: $color-dark;
+  background: $color-light;
+  margin-bottom: $base-size;
+  border-radius: $radius;
+  box-shadow: 0px 1px rgba(0, 0, 0, 0.3);
+
+
+}
