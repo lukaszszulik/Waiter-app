@@ -8,6 +8,7 @@ const Table = ({ id, status, peopleAmount, bill }) => {
 
     const tableData = useSelector((state) => getTablesById(state, tableId));
 
+
     return (
         <div>
           <TableForm {...tableData} />

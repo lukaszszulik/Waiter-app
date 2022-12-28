@@ -4,10 +4,13 @@ import { API_URL } from '../config';
 //selectors
 export const getAllTables = ({ tables }) => tables;
 
-export const getTablesById = ({ tables }, tableId) =>
-  tables.find((table) => table.id === tableId);
+//export const getTablesById = ({ tables }, tableId) =>
+ // tables.find((table) => table.id === tableId);
 
-// actions
+  export const getTablesById = ({ tables }, tableId) => { console.log('abc', tables, tableId); 
+  return tables.find((table) => table.id == tableId); }
+
+// actionsnewValues
 const createActionName = (actionName) => `app/tables/${actionName}`;
 const ADD_TABLE = createActionName('ADD_TABLE');
 const UPDATE_TABLES = createActionName('UPDATE_TABLES');
